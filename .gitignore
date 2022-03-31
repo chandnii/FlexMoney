@@ -1,0 +1,6 @@
+# node module
+**/node_modules/
+
+# Miscellaneous
+**/package-lock.json
+**/yarn.lock

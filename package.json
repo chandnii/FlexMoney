@@ -1,0 +1,34 @@
+{
+    "name": "flexmoney",
+    "private": true,
+    "version": "1.0.18",
+    "description": "Credit/Debit workflow",
+    "scripts": {
+        "server": "npm start --prefix server",
+        "client": "npm start --prefix client",
+        "dev": "concurrently \"npm:server\" \"npm:client\"",
+        "docs": "./node_modules/.bin/jsdoc -c ./conf.json",
+        "e2e": "cross-env CI=true npm run e2e --prefix client",
+        "release": "standard-version",
+        "release:client": "cd client && exec standard-version",
+        "release:server": "cd server && exec standard-version"
+    },
+    "author": "FlexMoney",
+    "devDependencies": {
+        "@commitlint/cli": "^13.2.0",
+        "@commitlint/config-conventional": "^13.2.0",
+        "concurrently": "^6.2.0",
+        "cross-env": "^7.0.2",
+        "jsdoc": "^3.6.3"
+    },
+    "dependencies": {
+        "standard-version": "^9.3.2"
+    },
+    "standard-version": {
+        "releaseCommitMessageFormat": "chore: update changelog@{{currentTag}}",
+        "skip": {
+            "bump": true,
+            "tag": true
+        }
+    }
+}
